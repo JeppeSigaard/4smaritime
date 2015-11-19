@@ -1,0 +1,123 @@
+$header-height:60px;
+$header-height-large:70px;
+
+
+@media only screen and(max-width:769px){
+    .fixed.show-menu .site-header .inner,
+    .show-menu .site-header .inner{
+        right:$main-menu-width;
+    }
+
+}
+
+.fixed .site-header .inner{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+}
+
+.site-header{
+	height:$header-height;
+	position:relative;
+	z-index:100;
+	overflow:visible;
+
+	.inner{
+		height:inherit;
+		background:$accent-color-blue;
+		position:relative;
+		z-index:100;
+		box-shadow: $base-shadow;
+        @extend %safari-fix;
+        right:0;
+        transition:right $main-menu-transition;
+	}
+
+    .hamburger{
+        height:$header-height;
+        width:$header-height + 5;
+        cursor:pointer;
+        transition: background 120ms, fill 150ms;
+        display: block;
+        background: $accent-color-blue;
+        border-left:1px solid $color-light-3;
+        outline: none;
+        position: absolute;
+        z-index:2;
+        top:0;
+        right:0;
+        
+
+        svg{
+            fill:$color-white;
+            height:24px;
+            width:24px;
+            top:($header-height - 24px) / 2;
+            left:($header-height - 16px) / 2;
+            position:relative;
+        }
+
+        .menu-close{
+            display: none;
+        }
+    }
+}
+
+@media only screen and(min-width:769px){
+	
+    .site-header {
+        
+        height: $header-height-large;
+        
+        .hamburger{
+            display: none; 
+        }
+    }
+}
+
+.show-menu .site-header .hamburger,
+.site-header .hamburger:hover{
+
+	background:$color-black;
+}
+
+.show-menu .site-header .hamburger{
+	.menu-close{
+		display: block;
+	}
+
+	svg.menu{
+		display: none;
+	}
+}
+
+
+.fixed .tiny-logo a{top:0;}
+.tiny-logo{
+    
+    position: absolute;
+    overflow: hidden;
+    width:140px;
+    top:$base-margin/2;
+    left:$base-margin/2;
+    height:$header-height - $base-margin;
+    
+    @media only screen and(min-width:769px){
+        display: none;
+    }
+    
+    a{
+        top:100%;
+        transition:top 120ms;
+        display: block;
+        position:absolute;
+        width:inherit;
+        height:100%;
+
+        img{
+            width:auto;
+            height:100%;
+        }
+    }
+}

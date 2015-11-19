@@ -1,0 +1,20 @@
+blockquote{
+	position: relative;
+	padding:10px 20px;
+	font-style: italic;
+	letter-spacing: 1.1;
+
+	&:before{
+		content:'';
+		position: absolute;
+		display: block;
+		background:url(../statics/img/quote.png) no-repeat top left;
+		background-size:120px;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		z-index:-1;
+		opacity:.08;
+	}
+}

@@ -1,0 +1,124 @@
+$main-menu-width: 220px;
+$main-menu-transition: 300ms cubic-bezier(.71, 0, .14, 1.01);
+
+.show-menu .main-menu{
+    right:0;
+}
+.fixed .main-menu{
+    position: fixed;
+    top:0;
+}
+.main-menu{
+    @extend %safari-fix;
+    display:block;
+    position: fixed;
+    height:calc(100vh + 60px);
+    width:$main-menu-width;
+    overflow:scroll;
+    padding-bottom:60px;
+    top:0;
+    z-index:101;
+    @media only screen and(max-width:769px){
+        right:-$main-menu-width;
+    }
+    transition:right $main-menu-transition;
+    background-color:$color-black;
+    
+	li.no-nav a,
+	li.no-nav a:hover{
+		cursor: default;
+		background-color: rgba(255,255,255,.9)!important;
+		color: $color-black;
+		font-weight:normal;
+		font-family: 'Dimitri';
+		font-size: 110%;
+		padding-top:3px;
+	}
+
+	li{
+		display: block;
+        overflow:hidden;
+		padding:16px 20px;
+        line-height: 1.4;
+		font-size: 90%;
+		font-weight: 400;
+		transition: color 120ms, background-color 120ms;
+		color: $color-light;
+        
+        a{
+            position: relative;
+            display: block;
+            
+            &:before{
+                
+                position:absolute;
+                display: block;
+                content:'';
+                width:500%;
+                height:500%;
+                left:-200%;
+                top:-200%;
+                
+            }
+        }
+        
+
+        span{
+            display: block;
+        }
+        
+		&:hover{
+			color: $anchor-hover-color;
+			background-color: rgba(255,255,255,.9)!important;
+		}
+
+	}
+
+	@for $i from 0 through 20{
+		$amount : .03 * $i;
+		li:nth-of-type(#{$i}){
+			background-color: rgba(255,255,255,$amount);
+		}
+	}
+    
+    @media only screen and(min-width:769px){
+        
+        position:absolute;
+        width:100%;
+        left:0;
+        padding-bottom: 0;
+        background:transparent;
+        height:auto;
+        
+        ul{
+            
+            display:table;
+            width:100%;
+            table-layout: auto;
+        }
+        
+        li{
+            display: table-cell;
+            text-align: center;
+            border:solid white;
+            border-width:0px 0px 0px 1px;
+            
+            &:hover{
+                background-color: $color-white;
+            }
+            
+            &:first-of-type{
+                border-width:0px;
+                
+            }
+            
+            a{
+                display: inline-block;
+                text-align: left;
+
+            }
+        }
+        
+    }
+    
+}

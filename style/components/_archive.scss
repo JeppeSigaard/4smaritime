@@ -1,0 +1,37 @@
+.archive-posts{
+    padding:0;
+    background-color: darken($color-light,2);
+
+    @media only screen and(min-width:480px){
+        padding: $base-margin/2;
+    }
+
+}
+
+.archive-article {
+	@extend .featured-article;
+}
+
+.archive-header{
+	@extend .post-lead;
+	@extend section;
+	margin:0-$base-margin/2 0-$base-margin/2 0;
+
+	@media only screen and(min-width:480px){
+		margin:0-$base-margin/2 0-$base-margin/2 $base-margin/2;
+	}
+
+	@media only screen and(min-width:1280px){
+		border-bottom: $base-margin solid darken($color-light-3,2);
+	}
+
+	p{
+		@extend .read-width;
+		line-height: $base-line-height;
+		padding: 0px $base-margin/2;
+		@media only screen and(min-width:480px){
+			padding: 0px;
+		}
+
+	}
+}

@@ -1,0 +1,23 @@
+// Fancy centering with extras callbackish...
+@mixin center($left:false,$top:false,$transform:null){
+    position:absolute;
+    $left-c: 0;
+    @if($left){
+         left:50%;
+         $left-c:-50%;
+    }
+    $top-c: 0;
+    @if($top){
+         top:50%;
+         $top-c:-50%;
+    }
+    transform: translate($left-c,$top-c) $transform;
+    transform-style: preserve-3d;
+}
+
+
+@mixin safari-fix($transform:null){
+    transform: translate3d(0,0,0) $transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}

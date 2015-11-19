@@ -1,0 +1,14 @@
+.post-lead{
+	font-size:110%;
+	font-weight:300;
+	background: $color-light-2;
+
+	@media only screen and(min-width:640px){
+		font-size: 125%;
+	}
+
+	@media only screen and(min-width:960px){
+		font-size: 135%;
+	}
+
+}

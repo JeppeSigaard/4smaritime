@@ -1,0 +1,12 @@
+.list-item {
+
+	.inner{
+		display: block;
+        padding:$base-margin 0;
+	}
+
+	.list-item-excerpt{
+		padding:0;
+		@extend %article-font-style;
+	}
+}

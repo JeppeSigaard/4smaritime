@@ -1,0 +1,71 @@
+.post-meta-share{
+	position:absolute;
+	top:0;
+	right:0;
+	height:100%;
+	list-style:none;
+	padding:0;
+	margin:0;
+	font-size:0;
+
+	li{
+		display: inline-block;
+		height:100%;
+	}
+
+	svg{
+		width:20px;
+		height:20px;
+		@include center(true,true);
+		fill:$color-black;
+		transition:fill 250ms;
+	}
+
+
+	a{
+		display: block;
+		position: relative;
+		height:100%;
+		width:50px;
+
+		@media only screen and(min-width:1280px){
+			width:70px;
+
+			svg{
+				height:24px;
+				width:24px;
+			}
+		}
+
+		&:after{
+			content:'';
+			display: block;
+			background-color:transparent;
+			@extend %fill-all;
+			transition: background-color 250ms;
+		}
+
+
+		&:hover{
+			svg{
+				fill:$anchor-hover-color;
+			}
+		}
+
+		&:hover:after{
+			background-color:rgba(0,0,0,.1);
+		}
+
+		&.fb-share{
+			background-color:rgba(255,255,255,.2);
+		}
+
+		&.tw-share{
+			background-color:rgba(255,255,255,.4);
+		}
+
+		&.comment-link{
+			background-color:rgba(255,255,255,.6);
+		}
+	}
+}

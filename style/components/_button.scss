@@ -1,0 +1,47 @@
+.button, body a.button{
+	display: inline-block;
+	padding: 10px 20px;
+	line-height:1;
+	text-decoration: none;
+	cursor: pointer;
+	background-color: $accent-color-green;
+	color: $color-light;
+	transition: background-color 120ms;
+	border-radius:3px;
+
+	&:hover{
+		color:$color-light;
+		text-decoration: none;
+		background-color: darken($accent-color-green,5);
+	}
+
+	&.disabled,
+	&.disbaled:hover{
+		background-color: $color-light-3;
+		cursor: default;
+	}
+
+	&.red{
+		background-color: $accent-color-red;
+
+		&:hover{
+			background-color: darken($accent-color-red,5);
+		}
+	}
+
+	&.blue{
+		background-color: $accent-color-blue;
+
+		&:hover{
+			background-color: darken($accent-color-blue,5);
+		}
+	}
+
+	&.black{
+		background-color: $color-black;
+
+		&:hover{
+			background-color: darken($color-black,5);
+		}
+	}
+}

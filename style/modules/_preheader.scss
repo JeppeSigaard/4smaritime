@@ -1,0 +1,54 @@
+@media(max-width:769px){body:not(.home) .preheader{display: none;}}
+.preheader{
+    padding:$base-margin 0;
+    z-index:99;
+    position:relative;
+    background: $color-white;
+    
+    .inner{
+        overflow: auto;
+    }
+    
+    .half{
+        @media only screen and(min-width:769px){
+            width:50%;   
+            float:left;
+            
+        }
+        
+        span{
+            display: block;
+            padding:0 0 $base-margin;
+        }
+    }
+    
+    #logo{
+        display: block;
+        max-width:320px;
+        margin:auto;
+        
+        @media only screen and(min-width:769px){
+            
+            margin:0;
+            
+        }
+        
+    }
+    
+    .right{
+        text-align: center;
+        padding-top:$base-margin;
+        
+        @media only screen and(min-width:769px){
+            
+            text-align: right;
+            padding: 0;
+        }
+        
+    }
+    
+    .description{
+        text-transform: uppercase;
+        color: $accent-color-blue;
+    }
+}

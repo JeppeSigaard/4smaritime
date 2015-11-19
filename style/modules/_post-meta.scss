@@ -1,0 +1,23 @@
+.post-meta{
+	font-size:70%;
+	text-transform: uppercase;
+	position:absolute;
+	z-index:10;
+	width:100%;
+	background:$color-light-3;
+	padding:0 $base-margin/2;
+	height:45px;
+	line-height: 45px;
+	bottom:0;
+
+	@media only screen and(min-width:480px){
+		padding:0 $base-margin;
+	}
+
+	@media only screen and(min-width:1280px){
+		height:60px;
+		line-height: 60px;
+		font-size:100%;
+	}
+
+}

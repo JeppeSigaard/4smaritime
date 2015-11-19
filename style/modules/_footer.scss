@@ -1,0 +1,6 @@
+.site-footer{
+	@extend .site-content;
+	min-height:50px;
+	position:relative;
+	z-index:1;
+}
