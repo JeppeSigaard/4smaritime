@@ -1,13 +1,4 @@
 .newsletter{
-	h2{
-		font-size:200%;
-		@media only screen and(min-width:480px){
-			font-size:250%;
-		}
-
-	}
-	p{
-		line-height: $base-line-height;
-		margin:$base-margin/2 0;
-	}
+    background-color: $accent-color-blue;
+    color:$color-white;
 }

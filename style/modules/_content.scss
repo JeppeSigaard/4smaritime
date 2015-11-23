@@ -1,6 +1,10 @@
+body:not(.home) .site-content{
+    @extend section;
+}
+
 .site-content{
 	position: relative;
+    overflow: hidden;
 	background:$color-white;
 	transition:margin-right 120ms;
-    min-height: 200vh;
 }

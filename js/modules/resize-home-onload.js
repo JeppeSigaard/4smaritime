@@ -19,7 +19,7 @@ $(function(){
     }
     
     $(window).resize(function(){
-        if(win.height() > 500 && win.width() > 768){
+        if(win.width() > 768){
             $('.preheader').removeAttr('style');
         }
     });

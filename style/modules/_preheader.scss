@@ -1,18 +1,23 @@
 @media(max-width:769px){body:not(.home) .preheader{display: none;}}
 .preheader{
-    padding:$base-margin 0;
+    padding:$base-margin $base-margin/2;
+    @media only screen and(min-width:480px){
+        padding:$base-margin;
+    }
+    
     z-index:99;
     position:relative;
     background: $color-white;
     
     .inner{
         overflow: auto;
+        padding:$base-margin 0;
     }
     
     .half{
         @media only screen and(min-width:769px){
-            width:50%;   
-            float:left;
+            width:50%;
+            display: inline-block;
             
         }
         

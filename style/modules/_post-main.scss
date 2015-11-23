@@ -1,0 +1,6 @@
+.post-main{
+    @media only screen and(min-width:960px){
+        max-width:$page-width-max;   
+        margin: auto;
+    }
+}

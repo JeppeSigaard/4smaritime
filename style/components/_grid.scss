@@ -1,0 +1,46 @@
+.grid{
+    font-size:0;
+    display: block;
+    
+    >*{
+        @extend %font-size;
+    }
+    
+    .half{
+        max-width:$read-width-max;
+        margin:auto;
+    
+        @media only screen and(min-width:960px){
+            display: inline-block;
+            vertical-align: top;
+            width:50%;
+            
+            &:nth-child(2n+1){
+                padding-right: $base-margin;
+            }
+            
+            &:nth-child(2n){
+                padding-left: $base-margin;
+            }
+        }
+    
+    }
+    
+    &.grid-twist .half{
+        
+        @media only screen and(min-width:960px){
+            &:nth-child(2n+1){
+                padding-right: 0;
+                padding-left: $base-margin;
+                float:right;
+            }
+            
+            &:nth-child(2n){
+                padding-left: 0;
+                padding-right: $base-margin;
+            }
+        }
+        
+        
+    }
+}

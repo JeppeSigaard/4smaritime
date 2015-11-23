@@ -13,14 +13,7 @@ get_template_part('template-parts/common/content','before');
 // 	Home og front page
 if(is_home() || is_front_page()){require 'templates/home.php';}
 
-//	Arkiver
-else if(is_archive() || is_category() ){require 'templates/archive.php';}
-
-//	Sider (post type page, dvs. i princippet også CPT'er)
-else if(is_page()){require 'templates/page.php';}
-
-//	Posts (post type post, dvs. i princippet også CPT'er)
-else if(is_single()){require 'templates/single.php';}
+else if(is_page() || is_single() || is_singular() ){require 'templates/single.php';}
 
 // 	End wrapper
 get_template_part('template-parts/common/content','after');

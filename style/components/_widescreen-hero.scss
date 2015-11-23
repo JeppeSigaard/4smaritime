@@ -1,5 +1,85 @@
 .widescreen-hero{
-    height:0;
-    background:gray;
-    padding: 0 0 40%;
+    height: 0;
+    overflow: hidden;
+    background: $color-black-3;
+    padding: 0 10px;
+    height:240px;
+    border-bottom: 1px solid $color-white;
+    
+    @media only screen and(min-width:480px){
+        padding:0 20px 50%;
+    }
+    
+    @media only screen and(min-width:640px){
+        padding:0 20px 56.35%;
+    }
+    
+    @media only screen and(min-width:960px){
+        padding:0 20px;
+        height:960px / 16 * 9;
+    }
+    
+    background-position:bottom;
+    background-size:cover;
+    background-repeat:no-repeat;
+    
+    .inner{
+        @include center(true,true);
+        height:100%;
+        width:100%;
+        overflow: visible;
+        padding:inherit;
+        @media only screen and(min-width:$page-width-max + 20){
+            padding:0;
+        }
+        
+    }
+    
+    h1{
+        margin-top: $base-margin*2;
+        color:$color-white;
+        font-size:250%;
+        text-align: center;
+        
+        @media only screen and(min-width:640px){
+            font-size:300%;
+            text-align: left;
+            span{
+                display: block;
+            }
+        }
+        
+    }
+    .sopro-icons{
+        position: absolute;
+        top:auto;
+        bottom:$base-margin;
+        left:0;
+        width:100%;
+        height: auto;
+        text-align: center;
+        
+        @media only screen and(min-width:640px){
+            width:auto;
+            left:auto;
+            right:$base-margin;
+        }
+        
+        a{
+            display: inline-block;
+            vertical-align: middle;
+            padding:0 $base-margin/2 $base-margin;
+            opacity:.9;
+            transition: opacity 200ms;
+            
+            &:hover{
+                opacity:1;
+            }
+            
+            img{
+                max-width:90px;
+                height:auto;
+            }
+        }
+    }
 }

@@ -87,8 +87,9 @@ $main-menu-transition: 300ms cubic-bezier(.71, 0, .14, 1.01);
         width:100%;
         left:0;
         padding-bottom: 0;
-        background:transparent;
+        background-color:$accent-color-blue;
         height:auto;
+        overflow:hidden;
         
         ul{
             
@@ -101,14 +102,14 @@ $main-menu-transition: 300ms cubic-bezier(.71, 0, .14, 1.01);
             display: table-cell;
             text-align: center;
             border:solid white;
-            border-width:0px 0px 0px 1px;
+            border-width:0px 0px 1px 1px;
             
             &:hover{
                 background-color: $color-white;
             }
             
             &:first-of-type{
-                border-width:0px;
+                border-width:0px 0px 1px;
                 
             }
             

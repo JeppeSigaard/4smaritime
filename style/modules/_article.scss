@@ -1,0 +1,24 @@
+.post-article{
+    @extend %article-font-style;
+    @extend .read-width;
+    @media only screen and(min-width:960px){
+        margin-left: 0;
+        max-width: $read-width-max-small;
+    }
+    
+    @media only screen and(min-width:#{$page-width-max}){
+        max-width: $read-width-max;
+    }
+    
+    h1{
+        font-size:150%;
+        @media only screen and(min-width:480px){font-size: 175%;}
+        @media only screen and(min-width:640px){font-size: 200%;}
+        @media only screen and(min-width:769px){font-size: 225%;}
+        @media only screen and(min-width:960px){font-size: 250%;}
+        line-height:1.2;
+        margin-bottom: 50px;
+        max-width:75%;
+    }
+    
+}

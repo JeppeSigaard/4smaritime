@@ -1,10 +1,20 @@
-$(function(){if($('.site-nav').length){
+$(function(){if($('.fixed-aside').length){
 
     var lastScrollTop = 0,
-        fancyScroll = $('.site-nav');
+        fancyScroll = $('.fixed-aside');
 
+    
+    
     $(window).on('scroll', function () {
 
+        if($('.site-footer').offset().top < $(window).scrollTop() + $(window).height()){
+            fancyScroll.addClass('bottom');
+        }
+        
+        else{
+            
+            fancyScroll.removeClass('bottom');
+        }
 
         var st = $(this).scrollTop(),
             diff = st - lastScrollTop,
@@ -12,7 +22,10 @@ $(function(){if($('.site-nav').length){
             fancyHeight = fancyScroll.offset().top + fancyScroll.innerHeight(),
             fancyScrollAmount = fancyScroll.scrollTop() + diff;
 
-		if($('body').hasClass('fixed')){
+        if(fancyScroll.hasClass('bottom')){
+        }
+        
+		else if($('body').hasClass('fixed') && $(window).width() > 960 && !fancyScroll.hasClass('bottom')){
 
 			fancyScroll.scrollTop(fancyScrollAmount);
 

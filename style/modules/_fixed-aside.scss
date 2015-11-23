@@ -1,0 +1,63 @@
+.fixed .fixed-aside.bottom{
+    @media only screen and(min-width:960px){
+        position:absolute;
+        top:auto;
+        bottom:0;
+        
+    }
+}
+
+.fixed .fixed-aside{
+    @media only screen and(min-width:960px){
+        position:fixed;
+        top:$header-height-large;
+        
+    }
+}
+
+.fixed-aside{
+    @extend .post-main;
+    
+    @media only screen and(min-width:960px){
+        
+        background:$color-light-2;
+        position: absolute;
+        top:0;
+        right:0;
+        width:calc(100% - (#{$read-width-max-small} + #{$base-margin}*2));
+        overflow:hidden;
+        height:calc(100vh - #{$header-height-large});
+        
+    }
+    @media only screen and(min-width:#{$page-width-max}){
+        width:calc(100% - (#{$read-width-max} + #{$base-margin}*2));  
+    }
+    
+    @media only screen and(min-width:#{$page-width-max + $base-margin*2}){
+        width:calc(100% - (#{$read-width-max} + #{$base-margin} + ((100% - #{$page-width-max}) / 2)));
+        
+    }
+    
+    .inner{
+        min-height: 200px;
+        position: relative;
+        @extend .read-width;
+        @extend section;
+        
+        @media only screen and(max-width:960px){
+            
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        
+        @media only screen and(min-width:#{$page-width-max}){
+            max-width:calc(#{$page-width-max} - #{$read-width-max} - #{$base-margin});
+            margin-left: 0;
+        }
+
+        @media only screen and(min-width:#{ $page-width-max + $base-margin}){
+            padding-right:0;
+        }
+    }
+}

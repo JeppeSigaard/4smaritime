@@ -1,0 +1,43 @@
+.article-list{}
+
+a.list-article{    
+    display: block;
+    margin:0 0 $base-margin/2;
+    background-color: $color-black-3;
+    color: $color-white;
+    clear: both;
+    overflow: auto;
+    font-size: 0;
+}
+
+.list-article-date{
+    @extend %font-size;
+    vertical-align: top;
+    padding: $base-margin;
+    display: inline-block;
+    height:100%;
+    width:110px;
+    border-right: 1px solid $color-white;
+    
+    span{
+        display: block;
+        text-align: center;
+        
+        &:first-child{
+            font-size:300%;
+        }
+    }
+}
+
+.list-article-pre{
+    vertical-align: top;
+    @extend %font-size;
+    display: inline-block;
+    padding:$base-margin;
+    width:calc(100% - 110px);
+    
+    h3{
+        font-size:125%;
+        margin-bottom:$base-margin/2;
+    }
+}
