@@ -14,6 +14,11 @@
 		text-decoration: none;
 		background-color: darken($accent-color-green,5);
 	}
+    
+    &.large{
+        font-size:125%;
+        padding: 12px 25px;
+    }
 
 	&.disabled,
 	&.disbaled:hover{
@@ -34,6 +39,15 @@
 
 		&:hover{
 			background-color: darken($accent-color-blue,5);
+		}
+	}
+    
+    &.white{
+		background-color: $color-white;
+        color:$color-black;
+
+		&:hover{
+			background-color: darken($color-white,5);
 		}
 	}
 

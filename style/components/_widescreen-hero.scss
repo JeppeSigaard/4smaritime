@@ -1,23 +1,12 @@
 .widescreen-hero{
-    height: 0;
+    position:absolute;
     overflow: hidden;
     background: $color-black-3;
     padding: 0 10px;
-    height:240px;
+    width:100%;
+    height:100%;
     border-bottom: 1px solid $color-white;
     
-    @media only screen and(min-width:480px){
-        padding:0 20px 50%;
-    }
-    
-    @media only screen and(min-width:640px){
-        padding:0 20px 56.35%;
-    }
-    
-    @media only screen and(min-width:960px){
-        padding:0 20px;
-        height:960px / 16 * 9;
-    }
     
     background-position:bottom;
     background-size:cover;
@@ -35,11 +24,12 @@
         
     }
     
-    h1{
+    .home-title{
         margin-top: $base-margin*2;
         color:$color-white;
         font-size:250%;
         text-align: center;
+        text-shadow:1px 1px 0px rgba(0,0,0,.2);
         
         @media only screen and(min-width:640px){
             font-size:300%;
@@ -49,37 +39,5 @@
             }
         }
         
-    }
-    .sopro-icons{
-        position: absolute;
-        top:auto;
-        bottom:$base-margin;
-        left:0;
-        width:100%;
-        height: auto;
-        text-align: center;
-        
-        @media only screen and(min-width:640px){
-            width:auto;
-            left:auto;
-            right:$base-margin;
-        }
-        
-        a{
-            display: inline-block;
-            vertical-align: middle;
-            padding:0 $base-margin/2 $base-margin;
-            opacity:.9;
-            transition: opacity 200ms;
-            
-            &:hover{
-                opacity:1;
-            }
-            
-            img{
-                max-width:90px;
-                height:auto;
-            }
-        }
     }
 }

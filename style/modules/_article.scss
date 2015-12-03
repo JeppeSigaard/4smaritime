@@ -3,11 +3,11 @@
     @extend .read-width;
     @media only screen and(min-width:960px){
         margin-left: 0;
-        max-width: $read-width-max-small;
+        max-width: $read-width-max-small - 20;
     }
     
     @media only screen and(min-width:#{$page-width-max}){
-        max-width: $read-width-max;
+        max-width: $read-width-max - 20;
     }
     
     h1{

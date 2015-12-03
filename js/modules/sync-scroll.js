@@ -38,5 +38,17 @@ $(function(){if($('.fixed-aside').length){
 
 		lastScrollTop = st;
     });
+    
+    $(window).load(function(){
+        
+        if($('.site-content').innerHeight() < $('.fixed-aside').innerHeight() && $(window).width() > 960){
+        
+            $('.site-content').css({
+                height: $('.fixed-aside').innerHeight(),
+            });
+
+        }
+        
+    });
 
 }});

@@ -1,0 +1,29 @@
+.heading-box{
+    font-size:0;
+    
+    h3{
+       font-size:32px;
+        line-height:1.1;
+        margin:7px 0px 20px;
+    }
+    
+    .icon{
+        width:110px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .text,p{
+        @extend %font-size;
+        @extend %article-font-style;
+    }
+    .text{
+        display: inline-block;
+        vertical-align: top;
+        width:50%;
+    }
+    
+    svg{
+        margin:0px 20px 0px 0px;
+    }
+}

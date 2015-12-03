@@ -1,5 +1,6 @@
 body:not(.home) .site-content{
     @extend section;
+    overflow: hidden;
 }
 
 .site-content{

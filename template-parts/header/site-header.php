@@ -26,6 +26,6 @@
             'depth'           => 0,
             'walker'          => ''
         ); 
-        echo str_replace('\\n','</span><span>',wp_nav_menu($main_menu_args));
+        echo smamo_newlines(wp_nav_menu($main_menu_args),'span');
     ?>
 </header>

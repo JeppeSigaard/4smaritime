@@ -1,8 +1,11 @@
-.article-list{}
+.article-list{
+    
+    line-height:1;
+}
 
 a.list-article{    
     display: block;
-    margin:0 0 $base-margin/2;
+    margin:0 0 $base-margin;
     background-color: $color-black-3;
     color: $color-white;
     clear: both;
@@ -13,18 +16,22 @@ a.list-article{
 .list-article-date{
     @extend %font-size;
     vertical-align: top;
-    padding: $base-margin;
+    padding: 20px;
     display: inline-block;
-    height:100%;
-    width:110px;
-    border-right: 1px solid $color-white;
+    height: 100%;
+    width: 125px;
+    border: 5px solid #454545;
+    background: white;
+    color: #454545;
     
     span{
         display: block;
         text-align: center;
+        font-size:80%;
+        text-transform: uppercase;
         
         &:first-child{
-            font-size:300%;
+            font-size:350%;
         }
     }
 }
@@ -34,7 +41,7 @@ a.list-article{
     @extend %font-size;
     display: inline-block;
     padding:$base-margin;
-    width:calc(100% - 110px);
+    width:calc(100% - 125px);
     
     h3{
         font-size:125%;
