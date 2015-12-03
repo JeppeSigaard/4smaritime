@@ -46,6 +46,11 @@ var validateForm = function(form){
             ready = false;
         }
 
+		if($(this).is(':required') && $(this).val() === ''){
+			$(this).removeClass('success').addClass('error');
+			ready = false;
+		}
+
     });
 
     if (ready){

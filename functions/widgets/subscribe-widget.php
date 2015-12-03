@@ -18,29 +18,31 @@ class smamo_subscribe_widget extends WP_Widget {
     // FRONT END
     public function widget( $args, $instance ) {
         
+		$api_key = (isset($instance['api_key']) && $instance['api_key'] !== '') ? $instance['api_key'] : get_theme_mod('mailchimp_api_key');
+		$list_id = (isset($instance['list_id']) && $instance['list_id'] !== '') ? $instance['list_id'] : get_theme_mod('mailchimp_list_id');
+		if ($api_key && $list_id) :
+
         echo $args['before_widget']; ?>
 
-        <form action="<?php echo admin_url('wp-ajax.php'); ?>" method="post">
-            <input type="hidden" name="action" value="smamo-mailchimp-subscribe">
-            <?php if (isset($instance['api_key'])) : ?>
-            <input type="hidden" name="api_key" value="<?php echo $instance['api_key'] ?>">
-            <?php endif; if (isset($instance['list_id'])) :  ?>
-            <input type="hidden" name="list_id" value="<?php echo $instance['list_id'] ?>">
-            <?php endif; if (isset($instance['description'])) :  ?>
-                <div>
-                    <p><?php echo $instance['description'] ?></p>
-                </div>
-            <?php endif; ?>
-            <div>
-                <input type="email" name="email">
-                <label for="email"><?php echo (isset($instance['label'])) ? $instance['label'] : 'Your email' ; ?></label>
-            </div>
-            <div>
-                <a class="button white large" href="#">Sign up</a>
-            </div>
-        </form>
+        <form action="<?php echo admin_url('admin-ajax.php'); ?>" method="post">
+			<input type="hidden" name="action" value="smamo_mailchimp_subscribe">
+			<input type="hidden" name="api_key" value="<?php echo $api_key; ?>">
+			<input type="hidden" name="list_ID" value="<?php echo $list_id; ?>">
+			<?php if (isset($instance['description'])) :  ?>
+			<div>
+				<p><?php echo apply_filters('the_content',$instance['description']); ?></p>
+			</div>
+			<?php endif; ?>
+			<div>
+				<input required type="email" name="email">
+				<label for="email">Your email</label>
+			</div>
+			<div>
+				<a class="button submit" href="#">Sign up</a>
+			</div>
+		</form>
         
-        <?php echo $args['after_widget'];
+        <?php echo $args['after_widget']; endif;
     }
 
     // BACKEND
@@ -67,11 +69,11 @@ class smamo_subscribe_widget extends WP_Widget {
         </p>
         <p>
             <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php _e( 'Api nøgle' ); ?></label> 
-            <input required class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>" />
+            <input placeholder="<?php echo get_theme_mod('mailchimp_api_key') ?>" class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>" />
         </p>
         <p>
             <label for="<?php echo $this->get_field_id( 'list_id' ); ?>"><?php _e( 'Liste ID' ); ?></label> 
-            <input required class="widefat" id="<?php echo $this->get_field_id( 'list_id' ); ?>" name="<?php echo $this->get_field_name( 'list_id' ); ?>" type="text" value="<?php echo esc_attr( $list_id ); ?>" />
+            <input placeholder="<?php echo get_theme_mod('mailchimp_list_id') ?>" class="widefat" id="<?php echo $this->get_field_id( 'list_id' ); ?>" name="<?php echo $this->get_field_name( 'list_id' ); ?>" type="text" value="<?php echo esc_attr( $list_id ); ?>" />
         </p>
         <?php 
     }

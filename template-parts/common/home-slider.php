@@ -10,9 +10,9 @@ if($slides->have_posts()) : ?>
     <?php while ($slides->have_posts()) : $slides->the_post(); ?>
     <?php $image_url = wp_get_attachment_image_src( get_post_meta(get_the_ID(), 'slide_image', true), 'widescreen' ); ?>
     <?php if(get_post_meta(get_the_ID(),'slide_href',true) !== '') : $target = (get_post_meta(get_the_ID(),'slide_blank',true) === '1') ? 'target="blank" ': '';?>
-    <a <?php echo $target ?>href="<?php echo get_post_meta(get_the_ID(),'slide_href',true) ?>" class="widescreen-hero hero-<?php the_ID(); ?>" data-bg="<?php echo $image_url[0]; ?>">
+    <a <?php echo $target ?>href="<?php echo get_post_meta(get_the_ID(),'slide_href',true) ?>" class="widescreen-hero loading hero-<?php the_ID(); ?>" data-bg="<?php echo $image_url[0]; ?>">
     <?php else : ?>
-    <div class="widescreen-hero hero-<?php the_ID(); ?>" data-bg="<?php echo $image_url[0]; ?>">
+    <div class="widescreen-hero loading hero-<?php the_ID(); ?>" data-bg="<?php echo $image_url[0]; ?>">
     <?php endif; ?>
     
         <div class="inner page-width">

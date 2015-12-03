@@ -1,4 +1,8 @@
-<?php if ( get_theme_mod('mailchimp_activate')) : ?>
+<?php
+if ( get_theme_mod('mailchimp_activate')
+   && get_theme_mod('mailchimp_api_key')
+   && get_theme_mod('mailchimp_list_id') ) :
+?>
 <section class="newsletter">
     <div class="inner page-width grid">
         <div class="half">
@@ -16,12 +20,15 @@
         </div>
         <div class="half">
             <form action="<?php echo admin_url('admin-ajax.php'); ?>" method="post">
+            	<input type="hidden" name="action" value="smamo_mailchimp_subscribe">
+            	<input type="hidden" name="api_key" value="<?php echo get_theme_mod('mailchimp_api_key'); ?>">
+            	<input type="hidden" name="list_ID" value="<?php echo get_theme_mod('mailchimp_list_id'); ?>">
                 <div>
-                    <input type="email" name="email">
+                    <input required type="email" name="email">
                     <label for="email">Your email</label>
                 </div>
                 <div>
-                    <a class="button white large" href="#">Sign up</a>
+                    <a class="button white large submit" href="#">Sign up</a>
                 </div>
             </form>
         </div>

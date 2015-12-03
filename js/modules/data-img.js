@@ -20,7 +20,7 @@ var loadDataImages = function(){
             $imgPlaceholder.onload = function(){
                 
                 // Apply the source to 'this', hide 'this' and fade it in
-                $img.removeAttr('data-bg').css({
+                $img.removeAttr('data-bg').removeClass('loading').css({
                     backgroundImage: 'url('+$imgSrc+')',
                 });
             };
@@ -38,7 +38,7 @@ var loadDataImages = function(){
             
             $imgPlaceholder.src = $imgSrc;
             $imgPlaceholder.onload = function(){
-                $img.removeAttr('data-src').attr('src',$imgSrc);
+                $img.removeAttr('data-src').removeClass('loading').attr('src',$imgSrc);
             };
         });
 
